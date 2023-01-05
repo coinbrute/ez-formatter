@@ -1,0 +1,32 @@
+{
+  "name": "smart-parser",
+  "version": "1.0.0",
+  "description": "json to xml. xml to json. simple. fast.  no libraries. ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coinbrute/smart-parser.git"
+  },
+  "author": "drew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coinbrute/smart-parser/issues"
+  },
+  "homepage": "https://github.com/coinbrute/smart-parser#readme",
+  "private": true,
+  "dependencies": {
+    "codemirror": "^5.37.0",
+    "jquery": "^3.3.1",
+    "jquery-resizable": "^1.0.6",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "spectre.css": "^0.5.1",
+    "vkbeautify": "^0.99.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

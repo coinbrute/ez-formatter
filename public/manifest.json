@@ -1,0 +1,13 @@
+{
+    "name": "XML JSON Editor",
+    "version": "1.0",
+    "description": "JSON to XML. XML to JSON. Simple. Fast. Period.",
+    "manifest_version": 2,
+    "author": "Drew",
+    "app": {
+      "background": {
+        "scripts": ["background.js"]
+      }
+    },
+    "icons": { "48": "static/icons/edit_validated_icon.png", "128": "static/icons/edit_validated_icon.png" }
+  }
