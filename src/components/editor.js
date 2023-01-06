@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CodeMirror from 'codemirror';
 import vkbeautify from 'vkbeautify';
+import xml2JSON from 'xml-js';
 import $ from 'jquery';
 import xml from 'codemirror/mode/xml/xml';
 import fold from 'codemirror/addon/fold/foldcode';
@@ -116,11 +117,15 @@ class Editor extends Component {
         this.setState({errorMessage: ''});
         try {
             if (this.state.selectedFileType === 'XML') {
-                let json = "CONVERT ME TO JSON HERE" // implement the conversion
+                let json = xml2JSON.xml2json(this.sourceEditor.getValue(), {compact: true, spaces: 2}); // "CONVERT ME TO JSON HERE" // implement the conversion
                 this.targetEditor = this.createCodeMirrorEditor("application/ld+json", 'previewArea', json);
             } else {
 
-                let xml = "CONVERT ME TO XML HERE" // implement the conversion
+                let xml = xml2JSON.json2xml(this.sourceEditor.getValue(), {
+                    ignoreComment: false,
+                    spaces: 2,
+                    compact: true
+                }); // "CONVERT ME TO XML HERE" // implement the conversion
                 this.targetEditor = this.createCodeMirrorEditor("xml", 'previewArea', xml);
             }
         } catch (e) {
@@ -175,8 +180,7 @@ class Editor extends Component {
             <div className="container">
                 <header className="navbar bg-gray ">
                     <section className="navbar-section" style={{display: 'flex', alignItems: 'center'}}>
-                        <img src="./static/icons/logo.svg" style={{height: '40px', width: '150px'}} alt="XML JSON Editor"/> <h4
-                        style={{paddingTop: '4px'}}>Editor</h4>
+                        <img src="./static/icons/logo.svg" style={{height: '40px', width: '150px'}} alt="XML JSON Editor"/>
                     </section>
 
                 </header>
@@ -265,8 +269,6 @@ class Editor extends Component {
                     </div>
                 </div>
             </div>
-            // <div>Hello, World!</div>
-
         )
     }
 }

@@ -1,7 +1,7 @@
 {
   "name": "smart-parser",
   "version": "1.0.0",
-  "description": "json to xml. xml to json. simple. fast.  no libraries. ",
+  "description": "json to xml. xml to json. simple and fast. period",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coinbrute/smart-parser.git"
@@ -21,7 +21,8 @@
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",
     "spectre.css": "^0.5.1",
-    "vkbeautify": "^0.99.3"
+    "vkbeautify": "^0.99.3",
+    "xml-js": "^1.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
