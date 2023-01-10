@@ -23,31 +23,64 @@
 
 }
 
+.navbar-section {
+    background-color: #2e6793;
+    background-blend-mode:lighten;
+    background: -webkit-linear-gradient(#142532, #7dc5fb);
+}
 
+.title-font {
+    font-family: system-ui;
+    font-weight: 700;
+    color:aliceblue;
+}
+
+.button-style {
+    background: -webkit-linear-gradient(#142532, #7dc5fb);
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+    width: 10rem;
+}
+
+.button-set {
+    width: auto;
+}
+
+.menu {
+    margin-right: 3%; 
+    min-width: -webkit-fill-available;
+}
 
 
 #container {
-    width: 100%;
-    height: 100%;
-
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
 }
+
 #left_panel {
-    position: absolute;
+    /* position: absolute;
     left: 0;
     top: 45px;
-    bottom: 0;
-    width: 49%;
+    bottom: 0;*/
+    width: 49%; 
+    display: flex;
 }
 
 #right_panel {
-    position: absolute;
+    /* position: absolute;
     right: 0;
     top: 45px;
-    bottom: 0;
-    width: 51%;
+    bottom: 0;*/
+    width: 51%; 
+    display: flex;
 }
+
 #drag {
-    position: absolute;
     top: 0;
     bottom: 0;
     padding: 6px;

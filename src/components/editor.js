@@ -117,7 +117,7 @@ class Editor extends Component {
         this.setState({errorMessage: ''});
         try {
             if (this.state.selectedFileType === 'XML') {
-                let json = xml2JSON.xml2json(this.sourceEditor.getValue(), {compact: true, spaces: 2}); // "CONVERT ME TO JSON HERE" // implement the conversion
+                let json = xml2JSON.xml2json(this.sourceEditor.getValue(), {compact: true, spaces: 2}); 
                 this.targetEditor = this.createCodeMirrorEditor("application/ld+json", 'previewArea', json);
             } else {
 
@@ -125,7 +125,7 @@ class Editor extends Component {
                     ignoreComment: false,
                     spaces: 2,
                     compact: true
-                }); // "CONVERT ME TO XML HERE" // implement the conversion
+                }); 
                 this.targetEditor = this.createCodeMirrorEditor("xml", 'previewArea', xml);
             }
         } catch (e) {
@@ -138,10 +138,9 @@ class Editor extends Component {
 
     preview = () => {
         try {
-            var tree = $.parseXML(this.sourceEditor.getValue()); //$.parseXML($('#xmlTextArea').val());
+            var tree = $.parseXML(this.sourceEditor.getValue());
             $('#treeView li').empty();
             this.traverse($('#treeView li'), tree.firstChild)
-            // this – is an —
             $('<span style="padding-right: 10px; padding-left: 10px; font-size: 15px">&#9660;</span>').prependTo('#treeView li:has(li)').click(function () {
                 var sign = $(this).text()
                 if (sign === "▼")
@@ -179,27 +178,28 @@ class Editor extends Component {
         return (
             <div className="container">
                 <header className="navbar bg-gray ">
-                    <section className="navbar-section" style={{display: 'flex', alignItems: 'center'}}>
-                        <img src="./static/icons/logo.svg" style={{height: '40px', width: '150px'}} alt="XML JSON Editor"/>
+                    <section className="navbar-section">
+                        {/* <img src="./static/icons/logo.svg" style={{height: '40px', width: '150px'}} alt="XML JSON Editor"/> */}
+                        <h1 className="title-font">&nbsp;EZ Formatter</h1>
                     </section>
 
                 </header>
 
-                <div id="container">
-                    <div id="left_panel">
+                <div id="container" className="row">
+                    <div className="col-6" id="left_panel">
 
                         <ul className="menu">
                             <li className="menu-item">
-                                <div style={{display: 'flex'}}>
-                                    <div style={{flex: '1'}}>
+                                <div>
+                                    <div className='button-set'>
 
-                                        <button className="btn btn-primary btn-sm" onClick={this.formatSource}>Beautify
+                                        <button className="button-style" onClick={this.formatSource}>Beautify
                                         </button>
                                         &nbsp;
-                                        <button className="btn btn-primary btn-sm" onClick={this.compactSource}>Compact
+                                        <button className="button-style" onClick={this.compactSource}>Compact
                                         </button>
                                     </div>
-                                    <div className="form-group">
+                                    <div className="form-group button-set">
                                         <label className="form-radio">
                                             <input type="radio" value="XML" name="filetype"
                                                    checked={this.state.selectedFileType === 'XML'}
@@ -213,13 +213,13 @@ class Editor extends Component {
                                             <i className="form-icon"></i> JSON
                                         </label>
                                     </div>
-                                    <div style={{flex: '1', textAlign: 'right'}}>
+                                    <div className='button-set'>
                                         {this.state.selectedFileType === 'XML' &&
-                                        <button className="btn btn-primary btn-sm"
+                                        <button className="button-style"
                                                 onClick={this.preview}>Tree &#9658;</button>
                                         }
                                         &nbsp;
-                                        <button className="btn btn-primary btn-sm"
+                                        <button className="button-style"
                                                 onClick={this.convert}>{this.state.selectedFileType === 'XML' ? 'JSON' : 'XML'} &#9658;</button>
                                     </div>
                                 </div>
@@ -232,7 +232,7 @@ class Editor extends Component {
                         </ul>
 
                     </div>
-                    <div id="right_panel">
+                    <div className="col-6" id="right_panel">
                         <div id="drag" className="bg-gray">
                             &nbsp;
                         </div>
