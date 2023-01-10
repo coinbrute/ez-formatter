@@ -3,7 +3,6 @@
 @import "../node_modules/codemirror/addon/fold/foldgutter.css";
 
 
-
 .CodeMirror {
     height: auto;
     top: 0;
@@ -24,20 +23,24 @@
 }
 
 .navbar-section {
-    background-color: #2e6793;
-    background-blend-mode:lighten;
-    background: -webkit-linear-gradient(#142532, #7dc5fb);
+    background: linear-gradient(45deg, #616161, #ffffff);
+    --tw-text-opacity: 1;
+    color: rgba(236,236,241,var(--tw-text-opacity));
+    border-radius: 5px;
+    box-shadow: #142532;
 }
 
 .title-font {
     font-family: system-ui;
     font-weight: 700;
-    color:aliceblue;
+    --tw-text-opacity: 1;
+    color: rgba(236,236,241,var(--tw-text-opacity));
 }
 
 .button-style {
-    background: -webkit-linear-gradient(#142532, #7dc5fb);
-    color: white;
+    background: -webkit-linear-gradient(#616161, #ffffff);
+    --tw-text-opacity: 1;
+    color: rgba(36,36,41,var(--tw-text-opacity));
     font-size: 20px;
     padding: 10px 60px;
     border-radius: 5px;
