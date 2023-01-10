@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import Xml2Json from './components/xml2json';
-import Footer from './components/footer';
+import X2J from './components/X2J';
 import './App.css';
-import Xml2Json from './components/xml2json';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Xml2Json />
-        <br/>
-        <Footer />
-      </div>
+
+        <X2J />
+
     );
   }
 }

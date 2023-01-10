@@ -16,7 +16,7 @@ if (!xml) {
     console.log(xml, fold, xmlfold, foldgutter, js, braceFold, indentFold);
 }
 
-class Xml2Json extends Component {
+class X2J extends Component {
 
     constructor() {
         super();
@@ -108,7 +108,8 @@ class Xml2Json extends Component {
                     cm.foldCode(cm.getCursor());
                 }
             },
-            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            inputStyle: "contenteditable"
         });
     }
 
@@ -174,12 +175,16 @@ class Xml2Json extends Component {
         }
     }
 
+    handlePaste(event) {
+        // Get the pasted value
+        this.sourceEditor.setValue(event.clipboardData.getData('text'));
+    }
+
     render() {
         return (
             <div className="container">
                 <header className="navbar bg-gray ">
                     <section className="navbar-section">
-                        {/* <img src="./static/icons/logo.svg" style={{height: '40px', width: '150px'}} alt="XML JSON Editor"/> */}
                         <h1 className="title-font">&nbsp;EZ Formatter</h1>
                     </section>
 
@@ -203,12 +208,14 @@ class Xml2Json extends Component {
                                         <label className="form-radio">
                                             <input type="radio" value="XML" name="filetype"
                                                    checked={this.state.selectedFileType === 'XML'}
+                                                   onPaste={this.handlePaste}
                                                    onChange={this.onFileTypeSelect}/>
                                             <i className="form-icon"></i> XML
                                         </label>
                                         <label className="form-radio">
                                             <input type="radio" value="JSON" name="filetype"
                                                    checked={this.state.selectedFileType === 'JSON'}
+                                                   onPaste={this.handlePaste}
                                                    onChange={this.onFileTypeSelect}/>
                                             <i className="form-icon"></i> JSON
                                         </label>
@@ -242,15 +249,15 @@ class Xml2Json extends Component {
                             <li className="menu-item" style={{display: 'flex'}}>
                                 {this.state.errorMessage &&
                                 <div className="toast toast-error" style={{flex: '3', textAlign: 'left'}}>
-                                    <button className="btn btn-clear float-right"></button>
+                                    <button className="button-style float-right"></button>
                                     {this.state.errorMessage}
                                 </div>
                                 }
                                 <div style={{flex: '1', textAlign: 'right'}}>
-                                    <button className="btn btn-primary btn-sm" onClick={this.formatPreview}>Beautify
+                                    <button className="button-style" onClick={this.formatPreview}>Beautify
                                     </button>
                                     &nbsp;
-                                    <button className="btn btn-primary btn-sm" onClick={this.compactPreview}>Compact
+                                    <button className="button-style" onClick={this.compactPreview}>Compact
                                     </button>
                                 </div>
                             </li>
@@ -274,4 +281,4 @@ class Xml2Json extends Component {
 }
 
 
-export default Xml2Json;
+export default X2J;
