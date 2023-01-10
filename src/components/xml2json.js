@@ -16,7 +16,7 @@ if (!xml) {
     console.log(xml, fold, xmlfold, foldgutter, js, braceFold, indentFold);
 }
 
-class Editor extends Component {
+class Xml2Json extends Component {
 
     constructor() {
         super();
@@ -274,4 +274,4 @@ class Editor extends Component {
 }
 
 
-export default Editor;
+export default Xml2Json;
