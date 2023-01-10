@@ -52,7 +52,7 @@
 
 .menu {
     margin-right: 3%; 
-    min-width: -webkit-fill-available;
+    min-width: stretch;
 }
 
 
