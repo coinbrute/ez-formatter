@@ -103,11 +103,6 @@ class X2J extends Component {
             lineNumbers: true,
             foldGutter: true,
             lineWrapping: true,
-            extraKeys: {
-                "Ctrl-Q": function (cm) {
-                    cm.foldCode(cm.getCursor());
-                }
-            },
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
             inputStyle: "contenteditable"
         });
