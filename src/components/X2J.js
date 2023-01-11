@@ -126,7 +126,8 @@ class X2J extends Component {
                     ignoreComment: false,
                     spaces: 2,
                     compact: true
-                }); 
+                });
+                xml = xml.includes("<root>") ? xml : `<root>${xml}</root>`; 
                 this.targetEditor = this.createCodeMirrorEditor("xml", 'previewArea', xml);
             }
         } catch (e) {
