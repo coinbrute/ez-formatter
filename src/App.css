@@ -56,7 +56,11 @@
 .menu {
     margin-right: 3%; 
     min-width: stretch;
-    background: linear-gradient(45deg, #dbdbdd, #d0d0e2);
+    background: linear-gradient(45deg, #dbdbdd, #c3c3ec);
+}
+
+.menu-right {
+    background: linear-gradient(315deg, #dbdbdd, #c3c3ec);
 }
 
 
@@ -73,7 +77,7 @@
     bottom: 0;*/
     width: 49%; 
     display: flex;
-    background: linear-gradient(45deg, #dbdbdd, #d0d0e2);
+    background: linear-gradient(45deg, #dbdbdd, #c3c3ec);
 }
 
 #right_panel {
@@ -94,5 +98,5 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    background: linear-gradient(45deg, #dbdbdd, #c3c3ec);
 }

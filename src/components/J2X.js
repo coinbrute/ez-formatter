@@ -20,7 +20,7 @@ class X2J extends Component {
 
     constructor() {
         super();
-        this.state = {showJSONFormatBtn: false, showJSONCompactBtn: false, selectedFileType: 'XML'}
+        this.state = {showJSONFormatBtn: false, showJSONCompactBtn: false, selectedFileType: 'JSON'}
     }
 
     componentDidMount() {
