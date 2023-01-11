@@ -200,16 +200,16 @@ class X2J extends Component {
                                     <div className="form-group button-set">
                                         <label className="form-radio">
                                             <input type="radio" value="XML" name="filetype"
-                                                   checked={this.state.selectedFileType === 'XML'}
-                                                   onPaste={this.handlePaste}
-                                                   onChange={this.onFileTypeSelect}/>
+                                                checked={this.state.selectedFileType === 'XML'}
+                                                onPaste={this.handlePaste}
+                                                onChange={this.onFileTypeSelect}/>
                                             <i className="form-icon"></i> XML
                                         </label>
                                         <label className="form-radio">
                                             <input type="radio" value="JSON" name="filetype"
-                                                   checked={this.state.selectedFileType === 'JSON'}
-                                                   onPaste={this.handlePaste}
-                                                   onChange={this.onFileTypeSelect}/>
+                                                checked={this.state.selectedFileType === 'JSON'}
+                                                onPaste={this.handlePaste}
+                                                onChange={this.onFileTypeSelect}/>
                                             <i className="form-icon"></i> JSON
                                         </label>
                                     </div>
